@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>NewsNest | News Aggregator</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<!-- ================= LANDING PAGE ================= -->
+
+<section id="landingPage" class="page">
+
+    <nav class="navbar">
+
+        <div class="logo">
+            📰 NewsNest
+        </div>
+
+        <div class="nav-links">
+            <a href="#" onclick="showPage('landingPage')">Home</a>
+            <a href="#categories">Categories</a>
+
+            <button class="nav-login" onclick="showPage('loginPage')">
+                Login
+            </button>
+        </div>
+
+    </nav>
+
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+                YOUR WORLD. YOUR NEWS.
+            </span>
+
+            <h1>
+                Stay informed with
+                <span>NewsNest.</span>
+            </h1>
+
+            <p>
+                Discover the latest stories from technology, sports,
+                business, science, entertainment and more — all in one place.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="showPage('signupPage')">
+                    Get Started
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="showPage('loginPage')">
+                    Login
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <span class="trending">
+                🔴 TRENDING NOW
+            </span>
+
+            <h2>
+                Discover stories that matter to you.
+            </h2>
+
+            <p>
+                Explore news across multiple categories
+                from one simple platform.
+            </p>
+
+            <span class="explore-text">
+                Explore News →
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section id="categories" class="categories-section">
+
+        <div class="section-heading">
+
+            <span>EXPLORE</span>
+
+            <h2>
+                Browse by Category
+            </h2>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category-card">
+                <div>💻</div>
+                <h3>Technology</h3>
+                <p>AI, gadgets and innovation</p>
+            </div>
+
+            <div class="category-card">
+                <div>⚽</div>
+                <h3>Sports</h3>
+                <p>Games, teams and athletes</p>
+            </div>
+
+            <div class="category-card">
+                <div>📈</div>
+                <h3>Business</h3>
+                <p>Markets and companies</p>
+            </div>
+
+            <div class="category-card">
+                <div>🔬</div>
+                <h3>Science</h3>
+                <p>Research and discoveries</p>
+            </div>
+
+            <div class="category-card">
+                <div>🎬</div>
+                <h3>Entertainment</h3>
+                <p>Movies, music and culture</p>
+            </div>
+
+            <div class="category-card">
+                <div>🏛️</div>
+                <h3>Politics</h3>
+                <p>Public affairs and governance</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+
+<!-- ================= LOGIN PAGE ================= -->
+
+<section id="loginPage" class="page auth-page hidden">
+
+    <div class="auth-container">
+
+        <div class="auth-brand">
+
+            <div class="big-logo">
+                📰
+            </div>
+
+            <h1>NewsNest</h1>
+
+            <p>
+                Your personalized news space.
+            </p>
+
+        </div>
+
+
+        <div class="auth-box">
+
+            <button
+                class="back-btn"
+                onclick="showPage('landingPage')">
+                ← Back
+            </button>
+
+            <h2>Welcome Back</h2>
+
+            <p class="auth-subtitle">
+                Login to continue
+            </p>
+
+
+            <form onsubmit="loginUser(event)">
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn">
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="switch-text">
+
+                Don't have an account?
+
+                <a
+                    href="#"
+                    onclick="showPage('signupPage')">
+                    Sign Up
+                </a>
+
+            </p>
+
+
+            <div class="admin-hint">
+
+                <strong>Admin Demo Account</strong>
+
+                <br>
+
+                Email: admin@newsnest.com
+
+                <br>
+
+                Password: admin123
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SIGNUP PAGE ================= -->
+
+<section id="signupPage" class="page auth-page hidden">
+
+    <div class="auth-container">
+
+        <div class="auth-brand">
+
+            <div class="big-logo">
+                📰
+            </div>
+
+            <h1>NewsNest</h1>
+
+            <p>
+                Join your personalized news community.
+            </p>
+
+        </div>
+
+
+        <div class="auth-box">
+
+            <button
+                class="back-btn"
+                onclick="showPage('landingPage')">
+                ← Back
+            </button>
+
+            <h2>Create Account</h2>
+
+            <p class="auth-subtitle">
+                Start exploring the news
+            </p>
+
+
+            <form onsubmit="signupUser(event)">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Enter your name"
+                    required
+                >
+
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Create a password"
+                    required
+                >
+
+
+                <button
+                    type="submit"
+                    class="primary-btn full-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+
+            <p class="switch-text">
+
+                Already have an account?
+
+                <a
+                    href="#"
+                    onclick="showPage('loginPage')">
+                    Login
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= USER DASHBOARD ================= -->
+
+<section id="userPage" class="page dashboard-page hidden">
+
+    <nav class="dashboard-nav">
+
+        <div class="logo">
+            📰 NewsNest
+        </div>
+
+
+        <div class="dashboard-actions">
+
+            <span id="welcomeUser"></span>
+
+            <button onclick="showSavedArticles()">
+                ❤️ Saved
+            </button>
+
+            <button
+                onclick="logoutUser()"
+                class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <span class="small-heading">
+                    LATEST STORIES
+                </span>
+
+                <h1>
+                    Good to see you,
+                    <span id="userName"></span> 👋
+                </h1>
+
+                <p>
+                    Here's what's happening around the world.
+                </p>
+
+            </div>
+
+
+            <div class="search-box">
+
+                🔍
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search news..."
+                    oninput="searchNews()"
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- CATEGORY FILTER -->
+
+        <div class="filter-buttons">
+
+            <button
+                class="active-filter"
+                onclick="filterNews('All', this)">
+                All
+            </button>
+
+            <button
+                onclick="filterNews('Technology', this)">
+                Technology
+            </button>
+
+            <button
+                onclick="filterNews('Sports', this)">
+                Sports
+            </button>
+
+            <button
+                onclick="filterNews('Business', this)">
+                Business
+            </button>
+
+            <button
+                onclick="filterNews('Science', this)">
+                Science
+            </button>
+
+            <button
+                onclick="filterNews('Entertainment', this)">
+                Entertainment
+            </button>
+
+            <button
+                onclick="filterNews('Politics', this)">
+                Politics
+            </button>
+
+        </div>
+
+
+        <div
+            id="newsContainer"
+            class="news-grid">
+        </div>
+
+    </main>
+
+</section>
+
+
+
+<!-- ================= SAVED ARTICLES ================= -->
+
+<section id="savedPage" class="page dashboard-page hidden">
+
+    <nav class="dashboard-nav">
+
+        <div class="logo">
+            📰 NewsNest
+        </div>
+
+
+        <div class="dashboard-actions">
+
+            <button onclick="showPage('userPage')">
+                ← Back to News
+            </button>
+
+            <button
+                onclick="logoutUser()"
+                class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <span class="small-heading">
+                    YOUR COLLECTION
+                </span>
+
+                <h1>
+                    Saved Articles ❤️
+                </h1>
+
+                <p>
+                    Articles you've saved for later.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div
+            id="savedContainer"
+            class="news-grid">
+        </div>
+
+    </main>
+
+</section>
+
+
+
+<!-- ================= ADMIN DASHBOARD ================= -->
+
+<section id="adminPage" class="page dashboard-page hidden">
+
+    <nav class="dashboard-nav">
+
+        <div class="logo">
+
+            📰 NewsNest
+
+            <span class="admin-label">
+                ADMIN
+            </span>
+
+        </div>
+
+
+        <div class="dashboard-actions">
+
+            <button
+                onclick="logoutUser()"
+                class="logout-btn">
+                Logout
+            </button>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-content">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <span class="small-heading">
+                    ADMINISTRATION
+                </span>
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p>
+                    Manage users and news content.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+
+                <span>👥</span>
+
+                <h2 id="totalUsers">0</h2>
+
+                <p>Total Users</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>📰</span>
+
+                <h2 id="totalArticles">0</h2>
+
+                <p>Total Articles</p>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <span>❤️</span>
+
+                <h2 id="totalSaved">0</h2>
+
+                <p>Saved Articles</p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADD ARTICLE -->
+
+        <div class="admin-section">
+
+            <div class="admin-section-header">
+
+                <h2>
+                    Add News Article
+                </h2>
+
+                <p>
+                    Create a new article for users.
+                </p>
+
+            </div>
+
+
+            <form
+                class="article-form"
+                onsubmit="addArticle(event)">
+
+                <input
+                    type="text"
+                    id="articleTitle"
+                    placeholder="Article title"
+                    required
+                >
+
+
+                <select
+                    id="articleCategory"
+                    required>
+
+                    <option value="">
+                        Select category
+                    </option>
+
+                    <option value="Technology">
+                        Technology
+                    </option>
+
+                    <option value="Sports">
+                        Sports
+                    </option>
+
+                    <option value="Business">
+                        Business
+                    </option>
+
+                    <option value="Science">
+                        Science
+                    </option>
+
+                    <option value="Entertainment">
+                        Entertainment
+                    </option>
+
+                    <option value="Politics">
+                        Politics
+                    </option>
+
+                </select>
+
+
+                <textarea
+                    id="articleDescription"
+                    placeholder="Article description"
+                    required></textarea>
+
+
+                <button
+                    class="primary-btn"
+                    type="submit">
+                    + Add Article
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- MANAGE ARTICLES -->
+
+        <div class="admin-section">
+
+            <div class="admin-section-header">
+
+                <h2>
+                    Manage Articles
+                </h2>
+
+                <p>
+                    View and delete published articles.
+                </p>
+
+            </div>
+
+
+            <div id="adminArticles"></div>
+
+        </div>
+
+
+        <!-- USERS -->
+
+        <div class="admin-section">
+
+            <div class="admin-section-header">
+
+                <h2>
+                    Registered Users
+                </h2>
+
+                <p>
+                    Users registered on NewsNest.
+                </p>
+
+            </div>
+
+
+            <div id="usersList"></div>
+
+        </div>
+
+
+        <!-- RESET -->
+
+        <div class="reset-section">
+
+            <p>
+                Want to start completely fresh?
+            </p>
+
+            <button
+                onclick="resetProject()"
+                class="reset-btn">
+                Reset Project Data
+            </button>
+
+        </div>
+
+    </main>
+
+</section>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
