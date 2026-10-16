@@ -796,3 +796,12 @@ button {
     }
 
 }
+h2 {
+    color: blue;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+}

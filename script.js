@@ -893,3 +893,6 @@ function resetProject() {
 initializeData();
 
 showPage("landingPage");
+
+document.getElementById("date").innerHTML =
+    "Welcome to News Aggregator!";
